@@ -137,7 +137,7 @@ This Documents will explains alomst all the python concepts from zero level to a
       
               e.g.: '.'.join(['aaa','bbb','ccc']) --> 'aaa.bbb.ccc'
       
-      12 **_String slices()_**:
+       12 **_String slices()_**:
   
         - a. The "slice" syntax is a handy way to refer to sub-parts of sequences -- typically strings and lists.
         - b. The slice string[start:end] is the elements beginning at start and extending up to but not including end.
@@ -174,8 +174,8 @@ This Documents will explains alomst all the python concepts from zero level to a
               
                 e.g.: text = u'A unicode \u018e string \xf1'
                       print(text): u'A unicode \u018e string \xf1'
-        -c. Regular expressions works exaclty correct manner if passed a unicode string.
-        -d. To Convert a unicode string to byte, just pass the **utf-8** in encoding and vice-versa.
+        - c. Regular expressions works exaclty correct manner if passed a unicode string.
+        - d. To Convert a unicode string to byte, just pass the **utf-8** in encoding and vice-versa.
         
         - For example: 
         
