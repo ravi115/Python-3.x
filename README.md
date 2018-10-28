@@ -44,7 +44,7 @@ This Documents will explains alomst all the python concepts from zero level to a
 
 -----------------------------------------------------------------------------------------------------------------------------
 
-### 1. Python Intorduction #
+## 1. Python Intorduction ##
   - Python is a very polpular language now a days. This language is used in every areas like AI/ML, Data Analytics, Web-Devlopment, Mobile Apps Development, e.t.c.
   - Currently Python latest version is version 3.
   - Python is platform independent.
@@ -53,15 +53,15 @@ This Documents will explains alomst all the python concepts from zero level to a
   - Python source files use the ".py" extension and are called "modules."
 
 
-### 2. Python Setup
+## 2. Python Setup ##
 
-### 3. Python Comments
+## 3. Python Comments ##
 
-### 4. Python DataTypes
+## 4. Python DataTypes ##
 
-### 5. Python Basics
+## 5. Python Basics ##
 
-### 6. Python String
+## 6. Python String ##
   - Python has in-built class for string operations know as 'str'.
   - String literals can be enclosed by either double or single quotes, although single quotes are more commonly used. 
   - Backslash escapes work the usual way within both single and double quoted literals -- e.g. \n \' \".
@@ -139,23 +139,69 @@ This Documents will explains alomst all the python concepts from zero level to a
       
       12 **_String slices()_**:
   
-        - a.
-        - b.
-         
+        - a. The "slice" syntax is a handy way to refer to sub-parts of sequences -- typically strings and lists.
+        - b. The slice string[start:end] is the elements beginning at start and extending up to but not including end.
+        - c. For Example: 
+        
+                var = "Hello World"  --> [H|e|l|l|o| |w|o|r|l|d|]
+                                          0 1 2 3 4 5 6 7 8 9 10
+                                        -11-10-9-8-7-6-5-4-3-2-1
+                        
+                var[0,2] = "He"
+                var[1:] = "ello world"
+                var[:] = "Hello world"  ==> gives a copy of string
+                var[2:10000] = "llo world" ==> if end string lenght specfied which does not exists in real, then python just consider the lenght till the string and rest will be auto turncated.
+                
+                var[-1] = "d" ==> Last character in the string.
+                var[-4] = "o" ==> 4th from last position in the string.
+                var[:-3] = 'He' ==> starts with 0th index and goes upto -3(i.e. from last to strat in the string but excluding the last indexing).
+                var[-3:] = 'ld' ==> starts from -3 to goes last index(postive) of string. since the index default considered as +ve. hence -3 to last.
+                
+       13. **_String %_**: 
+          
+        - a. Python has a printf()-like facility to put together a string. 
+        - b. The % operator takes a printf-type format string on the left. Like:  (%d int, %s string, %f/%g floating point).
+        - c. The matching values in a tuple on the right by comma separated.
+            
+              e.g.: text = "%d little pigs come out or I'll %s and %s and %s" % (3, 'huff', 'puff', 'blow down')
+                    print(text):
+                    3 little pigs come out or I'll huff and puff and blow down
               
+       14. **_i18n Strings (Unicode)_**:
+       
+        - a. To create a unicode string just prefix the string with 'u' character.
+        - b. For example:
+              
+                e.g.: text = u'A unicode \u018e string \xf1'
+                      print(text): u'A unicode \u018e string \xf1'
+        -c. Regular expressions works exaclty correct manner if passed a unicode string.
+        -d. To Convert a unicode string to byte, just pass the **utf-8** in encoding and vice-versa.
+        
+        - For example: 
+        
+                e.g.: ## (ustring from above contains a unicode string)
+                      > s = ustring.encode('utf-8')
+                      > s
+                      'A unicode \xc6\x8e string \xc3\xb1'  ## bytes of utf-8 encoding
+                      > t = unicode(s, 'utf-8')             ## Convert bytes back to a unicode string
+                      > t == ustring                      ## It's the same as the original, yay!
+
+                      True
+        
+
       
       
-### 7. Python File Operation
+## 7. Python File Operation ##
 
 
-### 8. Python Collection
+## 8. Python Collection ##
 
-### 9. Python Exceptions Handling
+## 9. Python Exceptions Handling ##
 
-### 10. Python Regular Expression
+## 10. Python Regular Expression ##
 
-### 11. Python Object Oriented Programming
+## 11. Python Object Oriented Programming ##
 
-### 12. Python Importaint Libraries
+## 12. Python Importaint Libraries ##
 
-### 13. Python Networking
+## 13. Python Networking ##
