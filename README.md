@@ -136,8 +136,9 @@ This Documents will explains alomst all the python concepts from zero level to a
       11. **_s.join(list)_**: opposite of split(), joins the elements in the given list together using the string as the delimiter.
       
               e.g.: '.'.join(['aaa','bbb','ccc']) --> 'aaa.bbb.ccc'
+              
       
-       12 **_String slices()_**:
+      12 **_String slices()_**:
   
         - a. The "slice" syntax is a handy way to refer to sub-parts of sequences -- typically strings and lists.
         - b. The slice string[start:end] is the elements beginning at start and extending up to but not including end.
@@ -157,7 +158,7 @@ This Documents will explains alomst all the python concepts from zero level to a
                 var[:-3] = 'He' ==> starts with 0th index and goes upto -3(i.e. from last to strat in the string but excluding the last indexing).
                 var[-3:] = 'ld' ==> starts from -3 to goes last index(postive) of string. since the index default considered as +ve. hence -3 to last.
                 
-       13. **_String %_**: 
+      13. **_String %_**: 
           
         - a. Python has a printf()-like facility to put together a string. 
         - b. The % operator takes a printf-type format string on the left. Like:  (%d int, %s string, %f/%g floating point).
@@ -167,7 +168,7 @@ This Documents will explains alomst all the python concepts from zero level to a
                     print(text):
                     3 little pigs come out or I'll huff and puff and blow down
               
-       14. **_i18n Strings (Unicode)_**:
+      14. **_i18n Strings (Unicode)_**:
        
         - a. To create a unicode string just prefix the string with 'u' character.
         - b. For example:
@@ -192,8 +193,79 @@ This Documents will explains alomst all the python concepts from zero level to a
       
       
 ## 7. Python File Operation ##
+  - Python has great support for File I/O operations. It has in built OS library which allows much better flexibility to work with files system.
+  - When we want to read from or write to a file we need to open it first. When we are done, it needs to be closed, so that resources that are tied with the file are freed.
+  - Hence, in Python, a file operation takes place in the following order.
+    - **1. Open a file.**
+    - **2. read/write (perform operation)**
+    - **3. close the file.**
+    
+  - **_Open a file_**:
+    - To a file we use **Open()** in built method.
+    - The Open() methods expects one to max two arguments.
+      
+    - **open("fileName", "mode[Optional]")** or **open("fileName",mode = 'r',encoding = 'utf-8')**:
+          
+    - It should be abosulte path to the filename.                             
+    - If the file doesn't exists in the directory then python will throw IOError: No Such file or directory.
+    - Mode is Optional. we can file in read/write or append mode.
+    - ByDefault the files gets opened in text mode only. In this mode we will get string reading from file.
+    - On the other hand, binary mode returns bytes and this is the mode to be used when dealing with non-text files like image or exe files.
+    - Below are the modes available in the python:
+    
+    ---------------------------------------------------------------------------------------------------------
+    **'r'** 	Open a file for reading. (default)
+    **'w'** 	Open a file for writing. Creates a new file if it does not exist or truncates(deletes all the existing file contents) the file if it exists.
+    **'x'** 	Open a file for exclusive creation. If the file already exists, the operation fails.
+    **'a'** 	Open for appending at the end of the file without truncating it. Creates a new file if it does not exist.
+    **'t'** 	Open in text mode. (default)
+    **'b'** 	Open in binary mode.
+    **'+'** 	Open a file for updating (reading and writing)
+    
+    **rb**    Opens a file for reading only in binary format. The file pointer is placed at the beginning of the file. This is the default mode.
+    **r+**    Opens a file for both reading and writing. The file pointer placed at the beginning of the file.
+    **rb+**   Opens a file for both reading and writing in binary format. The file pointer placed at the beginning of the file.
+    **wb**    Opens a file for writing only in binary format. Overwrites the file if the file exists. If the file does not exist, creates a new file for writing.
+    **w+**    Opens a file for both writing and reading. Overwrites the existing file if the file exists. If the file does not exist, creates a new file for reading and writing.
+    **ab+**   Opens a file for both appending and reading in binary format. The file pointer is at the end of the file if the file exists. The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.
+    -----------------------------------------------------------------------------------------------------------
+    
+          e.g.: 
+                f = open("test.txt")      # equivalent to 'r' or 'rt'
+                f = open("test.txt",'w')  # write in text mode
+                f = open("img.bmp",'r+b') # read and write in binary mode
 
+    
+    - Unlike other languages, the character 'a' does not imply the number 97 until it is encoded using ASCII (or other equivalent encodings).
+    - Hence, when working with files in text mode, it is highly recommended to specify the encoding type.
+    
+          f = open("test.txt",mode = 'r',encoding = 'utf-8')
+          
+  - **_close()_ a file**
+    - When we are done with operations to the file, we need to properly close the file.
+    - Closing a file will free up the resources that were tied with the file and is done using Python close() method.
+    - Python has a garbage collector to clean up unreferenced objects but, we must not rely on it to close the file.
+    
+            f = open("test.txt",encoding = 'utf-8')
+              # perform file operations
+            f.close()
+    - This method is not entirely safe. If an exception occurs when we are performing some operation with the file, the code exits without closing the file.
+    - A safer way is to use a try...finally block.
+   
+            try:
+               f = open("test.txt",encoding = 'utf-8')
+               # perform file operations
+            finally:
+               f.close()
+            
+            #This way, we are guaranteed that the file is properly closed even if an exception is raised, causing program flow to stop.
+               
+    -  The best way to do this is using the **with statement**. This ensures that the **file is closed when the block inside with is exited**.
+    
+            with open("test.txt",encoding = 'utf-8') as f:
+            # perform file operations
 
+   
 ## 8. Python Collection ##
 
 ## 9. Python Exceptions Handling ##
