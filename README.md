@@ -6,41 +6,41 @@ This Documents will explains alomst all the python concepts from zero level to a
 
 [1. Python Intorduction](#1-python-introduction)
 
-[2. Python Setup](#2.-python-setup)
+[2. Python Setup](#2-python-setup)
 
-[3. Python Comments](#3.-python-comments)
+[3. Python Comments](#3-python-comments)
 
-[4. Python DataTypes](#4.-python-datatypes)
+[4. Python DataTypes](#4-python-datatypes)
 
-[5. Python Basics](#5.-python-basics)
+[5. Python Basics](#5-python-basics)
 
-  - [5.1 Command Line Arguments](#5.1.-command-line-arguments)
-  - [5.2 Import Statements](#5.2.-import-statements)
-  - [5.3 If-Else Statement](#5.3.-if-else-statement)
-  - [5.4 Switch Statement](#5.4.-switch-statement)
+  - [5.1 Command Line Arguments](#5.1-command-line-arguments)
+  - [5.2 Import Statements](#5.2-import-statements)
+  - [5.3 If-Else Statement](#5.3-if-else-statement)
+  - [5.4 Switch Statement](#5.4-switch-statement)
   - [5.5 While Loop Statement](#5.5-while-loop-statement)
-  - [5.6 For Loop Statement](#5.6.-for-loop-statement)  
-  - [5.7 Functions](#5.7.-functions)
-  - [5.8 Return](#5.8.-return)
-  - [5.9 Continue](#5.9.-continue)
-  - [5.10 Break](#5.10.-break)
-  - [5.11 Pass](#5.11.-pass)
+  - [5.6 For Loop Statement](#5.6-for-loop-statement)  
+  - [5.7 Functions](#5.7-functions)
+  - [5.8 Return](#5.8-return)
+  - [5.9 Continue](#5.9-continue)
+  - [5.10 Break](#5.10-break)
+  - [5.11 Pass](#5.11-pass)
 
-[6. Python String](#6.-python-string)
+[6. Python String](#6-python-string)
 
 [7. Python File Operation](#7-python-file-operation)
 
-[8. Python Collection](#8.-python-colllection)
+[8. Python Collection](#8-python-colllection)
 
-[9. Python Exceptions Handling](#9.-python-exception-handling)
+[9. Python Exceptions Handling](#9-python-exception-handling)
 
-[10. Python Regular Expression](#10.-python-regular-expression)
+[10. Python Regular Expression](#10-python-regular-expression)
 
-[11. Python Object Oriented Programming](#11.-python-object-oriented-programming)
+[11. Python Object Oriented Programming](#11-python-object-oriented-programming)
 
-[12. Python Importaint Libraries](#12.-python-importaint-libraries)
+[12. Python Importaint Libraries](#12-python-importaint-libraries)
 
-[13. Python Networking](#13.-python-networking)
+[13. Python Networking](#13-python-networking)
 
 -----------------------------------------------------------------------------------------------------------------------------
 
