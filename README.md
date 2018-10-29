@@ -28,7 +28,7 @@ This Documents will explains alomst all the python concepts from zero level to a
 
 [6. Python String](#6.-python-string)
 
-[7. Python File Operation](.#7.-python-file-operation)
+[7. Python File Operation](##7.-python-file-operation)
 
 [8. Python Collection](#8.-python-colllection)
 
