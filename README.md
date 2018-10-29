@@ -30,7 +30,7 @@ This Documents will explains alomst all the python concepts from zero level to a
 
 [7. Python File Operation](#7-python-file-operation)
 
-[8. Python Collection](#8-python-colllection)
+[8. Python Collection](#8-python-collection)
 
 [9. Python Exceptions Handling](#9-python-exception-handling)
 
