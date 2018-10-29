@@ -138,7 +138,7 @@ This Documents will explains alomst all the python concepts from zero level to a
               e.g.: '.'.join(['aaa','bbb','ccc']) --> 'aaa.bbb.ccc'
               
       
-      12 **_String slices()_**:
+      12. **_String slices()_**:
   
         - a. The "slice" syntax is a handy way to refer to sub-parts of sequences -- typically strings and lists.
         - b. The slice string[start:end] is the elements beginning at start and extending up to but not including end.
@@ -214,20 +214,22 @@ This Documents will explains alomst all the python concepts from zero level to a
     - Below are the modes available in the python:
     
     ---------------------------------------------------------------------------------------------------------
-    **'r'** 	Open a file for reading. (default)
-    **'w'** 	Open a file for writing. Creates a new file if it does not exist or truncates(deletes all the existing file contents) the file if it exists.
-    **'x'** 	Open a file for exclusive creation. If the file already exists, the operation fails.
-    **'a'** 	Open for appending at the end of the file without truncating it. Creates a new file if it does not exist.
-    **'t'** 	Open in text mode. (default)
-    **'b'** 	Open in binary mode.
-    **'+'** 	Open a file for updating (reading and writing)
     
-    **rb**    Opens a file for reading only in binary format. The file pointer is placed at the beginning of the file. This is the default mode.
-    **r+**    Opens a file for both reading and writing. The file pointer placed at the beginning of the file.
-    **rb+**   Opens a file for both reading and writing in binary format. The file pointer placed at the beginning of the file.
-    **wb**    Opens a file for writing only in binary format. Overwrites the file if the file exists. If the file does not exist, creates a new file for writing.
-    **w+**    Opens a file for both writing and reading. Overwrites the existing file if the file exists. If the file does not exist, creates a new file for reading and writing.
-    **ab+**   Opens a file for both appending and reading in binary format. The file pointer is at the end of the file if the file exists. The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.
+      - **'r'** 	Open a file for reading. (default)
+      - **'w'** 	Open a file for writing. Creates a new file if it does not exist or truncates(deletes all the existing file contents) the file if it exists.
+      - **'x'** 	Open a file for exclusive creation. If the file already exists, the operation fails.
+      - **'a'** 	Open for appending at the end of the file without truncating it. Creates a new file if it does not exist.
+      - **'t'** 	Open in text mode. (default)
+      - **'b'** 	Open in binary mode.
+      - **'+'** 	Open a file for updating (reading and writing)
+    
+      - **rb**    Opens a file for reading only in binary format. The file pointer is placed at the beginning of the file. This is the default mode.
+      - **r+**    Opens a file for both reading and writing. The file pointer placed at the beginning of the file.
+      - **rb+**   Opens a file for both reading and writing in binary format. The file pointer placed at the beginning of the file.
+      - **wb**    Opens a file for writing only in binary format. Overwrites the file if the file exists. If the file does not exist, creates a new file for writing.
+      - **w+**    Opens a file for both writing and reading. Overwrites the existing file if the file exists. If the file does not exist, creates a new file for reading and writing.
+      - **ab+**   Opens a file for both appending and reading in binary format. The file pointer is at the end of the file if the file exists. The file opens in the append mode. If the file does not exist, it creates a new file for reading and writing.
+    
     -----------------------------------------------------------------------------------------------------------
     
           e.g.: 
@@ -242,6 +244,7 @@ This Documents will explains alomst all the python concepts from zero level to a
           f = open("test.txt",mode = 'r',encoding = 'utf-8')
           
   - **_close()_ a file**
+  
     - When we are done with operations to the file, we need to properly close the file.
     - Closing a file will free up the resources that were tied with the file and is done using Python close() method.
     - Python has a garbage collector to clean up unreferenced objects but, we must not rely on it to close the file.
@@ -260,11 +263,88 @@ This Documents will explains alomst all the python concepts from zero level to a
             
             #This way, we are guaranteed that the file is properly closed even if an exception is raised, causing program flow to stop.
                
-    -  The best way to do this is using the **with statement**. This ensures that the **file is closed when the block inside with is exited**.
+    -  The best way to do this is using the **with statement**. This ensures that the **file is closed when the block inside _with_ is exited**.
     
             with open("test.txt",encoding = 'utf-8') as f:
             # perform file operations
+    
+  - **_Write()_ a file**:
+    - To write file we need to open file with mode 'w' or 'a' or exclusive creation mode'x'.
+    - We need to be careful with the 'w' mode as it will overwrite into the file if it already exists.
+    - All the previous data will be erased if it open with mode 'w'.
+    - Writing a string or sequence of bytes (for binary files) is done using write() method.
+    - Write() method returns the number of characters written to the file.
+    
+            with open("test.txt",'w',encoding = 'utf-8') as f:
+              f.write("my first file\n")
+              f.write("This file\n\n")
+              f.write("contains three lines\n")
+            
+            - This program will create a new file named 'test.txt' if it does not exist. If it does exist, it is overwritten.
+             
+    - We must include the newline characters ourselves to distinguish different lines.
 
+- **_read()_ a file**:
+  - To read a file in Python, we must open the file in reading mode.
+        
+          >>> f = open("test.txt",'r',encoding = 'utf-8')
+          >>> f.read(4)    # read the first 4 data
+          'This'
+
+          >>> f.read(4)    # read the next 4 data
+          ' is '
+
+          >>> f.read()     # read in the rest till end of file
+          'my first file\nThis file\ncontains three lines\n'
+
+          >>> f.read() 
+          
+   - read() method returns _newline_as '\n'.
+   - once we reach end of the line in the file, we will get empty string in further reading.
+   - We can change our current file cursor (position) using the **seek()** method.
+          
+          >>> f.seek(0)   # bring file cursor to initial position
+          0
+    
+    - The **tell() method** returns our current position (in number of bytes).
+    
+          >>> f.tell()    # get the current file position
+          56
+          
+          >>> print(f.read())  # read the entire file
+          This is my first file
+          This file
+          contains three lines
+          
+    - we can use **readline()** method to read individual lines of a file. 
+    - This method reads a file till the newline, including the newline character.
+    - The readlines() method returns a list of remaining lines of the entire file.
+    
+          >>> f.readlines()
+          ['This is my first file\n', 'This file\n', 'contains three lines\n']
+
+
+- **_Python File Methods_**:
+  
+  ---------------------------------------------------------------------------------------------------------------------------
+      - **close()** 	                  Close an open file. It has no effect if the file is already closed.
+      - **detach()** 	                  Separate the underlying binary buffer from the TextIOBase and return it.
+      - **fileno()** 	                  Return an integer number (file descriptor) of the file.
+      - **flush()** 	                  Flush the write buffer of the file stream.
+      - **isatty()** 	                  Return True if the file stream is interactive.
+      - **read(n)** 	                  Read atmost n characters form the file. Reads till end of file if it is negative or None.
+      - **readable()** 	                Returns True if the file stream can be read from.
+      - **readline(n=-1)** 	            Read and return one line from the file. Reads in at most n bytes if specified.
+      - **readlines(n=-1)** 	          Read and return a list of lines from the file. Reads in at most n bytes/characters if specified.
+      - **seek(offset,from=SEEK_SET)** 	Change the file position to offset bytes, in reference to from (start, current, end).
+      - **seekable()** 	                Returns True if the file stream supports random access.
+      - **tell()** 	                    Returns the current file location.
+      - **truncate(size=None)** 	      Resize the file stream to size bytes. If size is not specified, resize to current location.
+      - **writable()** 	                Returns True if the file stream can be written to.
+      - **write(s)**  	                Write string s to the file and return the number of characters written.
+      -**writelines(lines)** 	          Write a list of lines to the file.
+
+----------------------------------------------------------------------------------------------------------------------------
    
 ## 8. Python Collection ##
 
