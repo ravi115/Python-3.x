@@ -4,7 +4,7 @@ This Documents will explains alomst all the python concepts from zero level to a
 
 -------------------------------------------------------------------------------------------------------------------------------
 
-[1. Python Intorduction](#1-python-introduction)
+[1. Python Intorduction](#1-python-intorduction)
 
 [2. Python Setup](#2-python-setup)
 
