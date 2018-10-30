@@ -30,6 +30,8 @@ This Documents will explains alomst all the python concepts from zero level to a
 
 [7. Python File Operation](#7-python-file-operation)
 
+  - [7.1 Python OS Module](#7.1-python-os-module)
+
 [8. Python Collection](#8-python-collection)
 
 [9. Python Exceptions Handling](#9-python-exception-handling)
@@ -345,7 +347,91 @@ This Documents will explains alomst all the python concepts from zero level to a
      -**writelines(lines)** 	          Write a list of lines to the file.
 
 ----------------------------------------------------------------------------------------------------------------------------
+
+## 7.1 Python OS Module
+
+  - Python has in-build module called OS which defines various methods to work with file operation.
+  - We can perform any complex file operation using python OS in-built library.
+  - In order to use OS module in our program, we've to first import the OS module.
+  
+        e.g.: 
+            >>> import os
+
+            >>> os.getcwd()
+            'C:\\Program Files\\PyScripter'
+
+            >>> os.getcwdb()
+            b'C:\\Program Files\\PyScripter'
    
+   - All the availabe methods in OS module: 
+    
+   ---------------------------------------------------------------------------------------------------------------------
+   1. **getcwd():**  Returns present working directory in the form of string.
+   2. **getcwdb():** Returns the present working directory in the form of bytes.
+   3. **chdir():**   We can change the current the working directory. we can use the forward slash(/) or backword slash(\) to seperate the path element.
+        
+                      e.g.: 
+                      >>> os.chdir('C:\\Python33')
+
+                      >>> print(os.getcwd())
+                      C:\Python33
+   
+   4. **istdir():** Return a list of files and sub-directories of the path specified.
+                    we must pass the directory path name else we will get an error saying _OSError: [Errno 2] No such file or directory: 'text'_
+                    also we should only pass the directory name else we will get an error saying: _OSError: [Errno 20] Not a directory: 'test.txt'_
+                    
+                    e.g.: 
+                    >>> os.listdir()
+                    ['DLLs',
+                    'Doc',
+                    'include',
+                    'Lib',
+                    'libs',
+                    'LICENSE.txt',
+                    'NEWS.txt',
+                    'python.exe',
+                    'pythonw.exe',
+                    'README.txt',
+                    'Scripts',
+                    'tcl',
+                    'Tools']
+   
+   5. **mkdir():** To make a new directory.
+                    if the full path is not specified, the new directory will get created in the current directory where python program is running.
+                    
+                    e.g.:
+                    >>> os.mkdir('example')
+                    
+   6. **rename():** To rename a directory or a file.
+                    The first argument is the old name and the new name must be supplies as the second argument.
+                    
+                    e.g.: 
+                    >>> os.listdir()
+                    ['test']
+
+                    >>> os.rename('test','new_one')
+
+                    >>> os.listdir()
+                    ['new_one']
+   7. **remove():** To remove a directory or a file.
+                    
+                    e.g.:
+                     >>> os.listdir()
+                      ['new_one', 'old.txt']
+
+                      >>> os.remove('old.txt')
+                      >>> os.listdir()
+                      ['new_one']
+    
+   8. **rmdir():** To remove an empty directory. we should pass the directory name as an argument of this method.
+                    
+                    e.g.: 
+                    >>> os.listdir()
+                    >>> os.rmdir('new_one')
+                    >>> os.listdir()
+                    []
+                    
+   -----------------------------------------------------------------------------------------------------------------------
 ## 8. Python Collection ##
 
 ## 9. Python Exceptions Handling ##
