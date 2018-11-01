@@ -30,7 +30,7 @@ This Documents will explains alomst all the python concepts from zero level to a
 
 [7. Python File Operation](#7-python-file-operation)
 
-  - [7.1 Python OS Module](#7.1-python-os-module)
+  - [7.1 Python OS Module](#7-1-python-os-module)
 
 [8. Python Collection](#8-python-collection)
 
@@ -435,6 +435,88 @@ This Documents will explains alomst all the python concepts from zero level to a
 ## 8. Python Collection ##
 
 ## 9. Python Exceptions Handling ##
+
+  - Errors detected during execution are called exceptions and are not unconditionally fatal.
+  - Python has many built-in exceptions which forces your program to output an error when something in it goes wrong.
+  - When these exceptions occur, it causes the current process to stop and passes it to the calling process until it is handled. If not handled, our program will crash.
+  - For example, if function A calls function B which in turn calls function C and an exception occurs in function C. If it is not handled in C, the exception passes to B and then to A.
+      
+          >>> 10 * (1/0)
+          Traceback (most recent call last):
+            File "<stdin>", line 1, in <module>
+          ZeroDivisionError: division by zero
+          >>> 4 + spam*3
+          Traceback (most recent call last):
+            File "<stdin>", line 1, in <module>
+          NameError: name 'spam' is not defined
+          >>> '2' + 2
+          Traceback (most recent call last):
+            File "<stdin>", line 1, in <module>
+          TypeError: Can't convert 'int' object to str implicitly
+          
+  - **Handling Exception in Python:**
+    - In Python, exceptions can be handled using a try statement.
+    - A critical operation which can raise exception is placed inside the try clause and the code that handles exception is written in except clause.
+    - For example:
+    
+                try:
+                        a = 5/0;
+                except:
+                        print("We can not perform zero divison error")
+     
+     - If no exception occurs, except block is skipped and normal flow continues. 
+     - If an exception occurs during execution of the try clause, the rest of the clause is skipped. Then if its type matches the exception named after the except keyword, the except clause is executed, and then execution continues after the try statement.
+     
+                 try:
+                        a = 5/0;
+                except ZeroDivisionError:
+                        print("We can not perform zero divison error")
+                        
+                        
+     - If an exception occurs which does not match the exception named in the except clause, it is passed on to outer try statements; if no handler is found, it is an unhandled exception and execution stops with a stack trace of caught exception type.
+        
+                try:
+                        a = 5/0;
+                except NameError: ##specified wrong type of exceptio  here.
+                        print("We can not perform zero divison error")
+                        
+                
+                Output: 
+                
+                Traceback (most recent call last):
+                  File "exception.py", line 2, in <module>
+                    a = 5/0;
+                ZeroDivisionError: integer division or modulo by zero
+
+  - **Handling multiple exception:**
+    - A try clause can have any number of except clause to handle them differently but only one will be executed in case an exception occurs.
+    - We can use a _tuple of values_ to specify multiple exceptions in an except clause.
+        
+          e.g.: except (RuntimeError, TypeError, NameError):
+          
+    - For complete example: 
+    
+                try:
+                    # perform divison
+                    a = 5/0
+                    pass
+
+                except ValueError:
+                    # handle ValueError exception
+                    print("handle ValueError exception")
+                    pass
+
+                except (TypeError, NameError):
+                    # handle multiple exceptions
+                    print("handles TypeError and ZeroDivisionError")
+                    pass
+
+                except:
+                    # handle all other exceptions
+                    print("handle all the exceptions")
+                    pass
+                    
+        
 
 ## 10. Python Regular Expression ##
 
