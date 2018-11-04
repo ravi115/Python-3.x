@@ -34,7 +34,7 @@ This Documents will explains alomst all the python concepts from zero level to a
 
 [8. Python Collection](#8-python-collection)
 
-[9. Python Exceptions Handling](#9-python-exception-handling)
+[9. Python Exceptions Handling](#9-python-exceptions-handling)
 
 [10. Python Regular Expression](#10-python-regular-expression)
 
@@ -516,7 +516,36 @@ This Documents will explains alomst all the python concepts from zero level to a
                     print("handle all the exceptions")
                     pass
                     
+
+  - **Raising the Exception:**
+    - In Python programming, exceptions are raised when corresponding errors occur at run time, but we can forcefully raise it using the keyword raise.
+    - For example:
         
+                      try:
+                          raise NameError("Hi There")
+                      except NameError:
+                          print("caught the exception")
+                          
+    - The sole argument to raise indicates the exception to be raised.
+    - This must be either an exception instance or an exception class (a class that derives from Exception).
+    - If an exception class is passed, it will be implicitly instantiated by calling its constructor with no arguments. Like below:
+                  
+                  raise ValueError  # shorthand for 'raise ValueError()'
+                  
+  - **try...finally:**
+    - The try statement in Python can have an optional finally clause. 
+    - This clause will be executed atleast once. This clause is used to release the external resopurces, e.t.c.
+    - For example:
+    
+                  try:
+                       f = open("test.txt",encoding = 'utf-8')
+                       # perform file operations
+                  finally:
+                       f.close()
+        
+              
+  - **User-defined Exception:**
+    - 
 
 ## 10. Python Regular Expression ##
 
