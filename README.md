@@ -532,7 +532,7 @@ This Documents will explains alomst all the python concepts from zero level to a
                   
                   raise ValueError  # shorthand for 'raise ValueError()'
                   
-  - **try...finally:**
+  - **try...finally(Clean-up Actions):**
     - The try statement in Python can have an optional finally clause. 
     - This clause will be executed atleast once. This clause is used to release the external resopurces, e.t.c.
     - For example:
@@ -545,7 +545,42 @@ This Documents will explains alomst all the python concepts from zero level to a
         
               
   - **User-defined Exception:**
-    - 
+    - Programs may name their own exceptions by creating a new exception class.
+    - User defined Exceptions should typically be derived from the Exception class, either directly or indirectly.
+    - Below code snipet to decalre the exception class: 
+    
+    
+                    class CustomError(Exception):
+                      '''Exception raised by this customError exception class'''
+
+                      def __init__(self, message):
+                        self.message = message
+
+
+
+
+
+                    '''
+
+                      Test the above exception.
+                    '''
+                    try:
+                      raise CustomError("this is custom error")
+                    except CustomError:
+                      print("This is custom error")
+                      
+                      
+                      
+  - **Predefined Clean-up Actions:**
+    - define standard clean-up actions to be undertaken when the object is no longer needed, regardless of whether or not the operation using the object succeeded or failed. 
+    - The statement used with built-in keyword **with** which performs automatic clean-up activity.
+    - For example:
+        
+                with open("myfile.txt") as f:
+                  for line in f:
+                      print(line, end="")
+    - After the statement is executed, the file f is always closed, even if a problem was encountered while processing the lines.
+      
 
 ## 10. Python Regular Expression ##
 
