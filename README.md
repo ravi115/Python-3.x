@@ -32,7 +32,7 @@ This Documents will explains alomst all the python concepts from zero level to a
 
   - [7.1 Python OS Module](#7-1-python-os-module)
 
-[8. Python Collection](#8-python-collection)
+[8. Python Collections](#8-python-collections)
 
 [9. Python Exceptions Handling](#9-python-exceptions-handling)
 
@@ -432,7 +432,61 @@ This Documents will explains alomst all the python concepts from zero level to a
                     []
                     
    -----------------------------------------------------------------------------------------------------------------------
-## 8. Python Collection ##
+## 8. Python Collections ##
+
+  - Python has inbuilt data structure to holds the data.
+  - Unlike java, python doesn't support array data types.
+  - Python has mainly 4 data structures : **1. List**, **2. Set**, **3. Tuples**, **4. Dictionaries**
+  
+  - **1. List data structure:**
+    - List is data structure in python which holds values in insertion order.
+    - To decalre a list, we just use **[]**.
+    - List can be said as a dynamic arrays in other languages.
+    - We use index based operation on List Object.
+    - We use **:** operator on List Data types to specify the position of elements.
+    - For example:
+            
+                List[start : end]
+                where,  start = start of the index of an element in the list
+                        end   = end of the index of the elements in the list. (this index will be always excluded)
+                        
+     - Basic operations:
+     
+            var = [1, 2, 3, 4, 5]
+            print("print all the elements : ", var)                   -> 1,2,3,4,5
+            print("print elements from index 1 to 3: ", var[1:3])     -> 2,3
+            print("print elements from index 1 to end: ", var[1:])    -> 2,3,4,5
+            print("print elements from index start to 2: ", var[:2])  -> 1,2
+            
+  - **In-built Functions of List**
+  
+    - **_ list.append(x)_:** 
+       - Add an item to the end of the list.
+    - **_ list.extend(iterable)_:**
+      - Extend the list by appending all the items from the iterable.
+    - **_ list.insert(i, x)_:**
+      - Insert an item at a given position.
+      - The first argument is the index of the element before which to insert.
+      - So, if an elements needs to be inserted at the 2^nd index, then list.insert(3,element). Hence, all the elements from the specified index will be shifted by 1 towards their right position.
+    - **_ list.remove(x)_:**
+      - Remove the first item from the list whose value is equal to x. 
+      - It raises a ValueError if there is no such item.
+    - **_ list.pop(i) || list.pop()_:**
+      - Remove the item at the given position in the list, and return it.
+      -  If no index is specified, a.pop() removes and returns the last item in the list. So, in case of list.pop() will return the last element from the list.
+      - If the index specified doesn't find the elements for pop-up  then it will raise the exception **IndexError: pop index out of range**.
+    - **_ list.clear()_:**
+      - Remove all items from the list.
+    - **_ list.index(x[, start[, end]])_:**
+      - Return zero-based index in the list of the first item whose value is equal to x.
+      - Raises a ValueError if there is no such item.
+      
+      
+          
+        
+          
+          
+                        
 
 ## 9. Python Exceptions Handling ##
 
