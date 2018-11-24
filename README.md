@@ -438,7 +438,7 @@ This Documents will explains alomst all the python concepts from zero level to a
   - Unlike java, python doesn't support array data types.
   - Python has mainly 4 data structures : **1. List**, **2. Set**, **3. Tuples**, **4. Dictionaries**
   
-  - **1. List data structure:**
+  - **1. List :**
     - List is data structure in python which holds values in insertion order.
     - To decalre a list, we just use **[]**.
     - List can be said as a dynamic arrays in other languages.
@@ -482,11 +482,95 @@ This Documents will explains alomst all the python concepts from zero level to a
       - Raises a ValueError if there is no such item.
       
       
-          
+  - **Set :**
+    - 1. A set is an unordered collection of items.
+    - 2. Every elements in the set are unique.
+    - 3. Every elements in the set are immutable.
+    - 4. Sets can be used to perform mathematical set operations like union, intersection, symmetric difference etc.
+    - 5. The element supplied to the set object must be iterable.
+    - 6. Since set are unordered elements, they cannot have indexing based operation like list has.
+    - 7. Set even doesn't support slices.
+    
+  
+  - **In-Built functions of set:**
+    - **_set(<elements...>)_:**
+      - This creates the set with the iterable elements supplied to it.
+      - For example:
+      
+            x = set("ravi")
+            print(x)
+            
+            output: set(['r', 'a', 'v', 'i'])
         
-          
-          
-                        
+    - **_set([element1, element2.....,elementn])_:**
+      - This creates the set with the elements supplied to it.
+      - For example:
+      
+            x = set([1,2,3])
+            print(X)
+            output:  set([1, 2, 3])
+    
+    - **_add()_:**
+      - Adds a single element to the set.
+      - This takes only one argument of type int. string, e.t.c but not any other collections object like list. dict, e.t.c.
+      - For example:
+      
+            x = set([1,2,3])
+            x.add(9)
+            print(x)
+            output: set([1,2,3,9])
+        
+    - **_clear()_:**
+      - Removes all elements from  set object.
+      - For example:
+      
+            x = set(["ravi", "ranjan"])
+            x.clear()
+            print(x)
+            output: set([])
+    
+    
+    - **_copy()_:**
+      - Returns the copy of elements of set to othere object.
+      - For example:
+        
+            x = set([1,2,3])
+            z = x.copy()
+            print(z)
+            output: set([1,2,3])
+            
+   
+    - **_difference()_:** 	
+      - Returns the difference of two or more sets as a new set.
+    - **_difference_update()_:** 	
+      - Removes all elements of another set from this set.
+    - **_discard()_:** 	
+      - Removes an element from the set if it is a member. (Do nothing if the element is not in set).
+    - **_intersection()_:** 	
+      - Returns the intersection of two sets as a new set..
+    - **_intersection_update()_:** 	
+      - Updates the set with the intersection of itself and another.
+    - **_isdisjoint()_:** 	
+      - Returns True if two sets have a null intersection.
+    - **_issubset()_:**
+      - Returns True if another set contains this set.
+    - **_issuperset()_:** 	
+      - Returns True if this set contains another set.
+    - **_pop()_:** 	
+      - Removes and returns an arbitary set element. Raise KeyError if the set is empty.
+    - **_remove()_:** 	
+      - Removes an element from the set. If the element is not a member, raise a KeyError.
+    - **_symmetric_difference()_:** 	
+      - Returns the symmetric difference of two sets as a new set.
+    - **_symmetric_difference_update()_:** 	
+      - Updates a set with the symmetric difference of itself and another.
+    - **_union()_:** 	
+      - Returns the union of sets in a new set.
+    - **_update()_:** 	
+      - Updates the set with the union of itself and others. 
+      
+      
+      
 
 ## 9. Python Exceptions Handling ##
 
