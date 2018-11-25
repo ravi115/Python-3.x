@@ -482,7 +482,7 @@ This Documents will explains alomst all the python concepts from zero level to a
       - Raises a ValueError if there is no such item.
       
       
-  - **Set :**
+  - **2. Set :**
     - 1. A set is an unordered collection of items.
     - 2. Every elements in the set are unique.
     - 3. Every elements in the set are immutable.
@@ -568,9 +568,58 @@ This Documents will explains alomst all the python concepts from zero level to a
       - Returns the union of sets in a new set.
     - **_update()_:** 	
       - Updates the set with the union of itself and others. 
+    
+    - **Iterate Through a Set:**
+      - For example:
       
+              for letter in set("ravi")
+                  print(letter)
+              
+              output: r
+                      a
+                      v
+                      i
+          
+    
+    - **_all()_:** 	
+      - Return True if all elements of the set are true (or if the set is empty).
+    - **_any()_:** 	
+      - Return True if any element of the set is true. If the set is empty, return False.
+    - **_enumerate()_:**
+      - Return an enumerate object. It contains the index and value of all the items of set as a pair.
+    - **_len()_:**
+      - Return the length (the number of items) in the set.
+    - **_max()_:**
+      - Return the largest item in the set.
+    - **_min()_:** 	
+      - Return the smallest item in the set.
+    - **_sorted()_:**
+      - Return a new sorted list from elements in the set(does not sort the set itself).
+    - **_sum()_:**
+      - Retrun the sum of all elements in the set.
       
+  
+  - **Frozen Set:**
+    - Frozenset is a new class that has the characteristics of a set, but its elements cannot be changed once assigned.
+    - While tuples are immutable lists, frozensets are immutable sets.
+    - Frozensets are hashable and can be used as keys to a dictionary.
+    - Frozensets are immutable in nature, it doesn't have add or remove method. we can only perform read type operation on frozensets.
+  
+  - **In-Built functions of FrozenSet:**
+    
+    - **_frozenset()_:**
+      - Frozensets can be created using the function frozenset().
       
+    - **_copy()_**
+    - **_difference()_**
+    - **_intersection()_**
+    - **_isdisjoint()_**
+    - **_issubset()_**
+    - **_issuperset()_**
+    - **_symmetric_difference()_**
+    - **_union()_**
+    
+    
 
 ## 9. Python Exceptions Handling ##
 
